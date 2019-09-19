@@ -13,7 +13,7 @@ public class Solution{
         boolean[] dp = new boolean[len+1];
         //初始化
         dp[0] = true;
-        for(int i = 1; i < s.length(); i++) {
+        for(int i = 1; i <= s.length(); i++) {
         	for(int j = 0; j < i; j++) {
         		//abcde  ab,cde  a=false ab=true c=false cd=false cde=true
         		if(dp[j] && wordDict.contains(s.substring(j, i))) {
