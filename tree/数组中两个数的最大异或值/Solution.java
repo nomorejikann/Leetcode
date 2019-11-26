@@ -1,3 +1,8 @@
+/**
+输入: [3, 10, 5, 25, 2, 8]
+输出: 28
+解释: 最大的结果是 5 ^ 25 = 28.
+*/
 class Solution {
     public int findMaximumXOR(int[] nums) {
         if (nums == null || nums.length <= 1) {
