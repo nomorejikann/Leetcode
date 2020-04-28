@@ -3,18 +3,19 @@
 */
 class Solution {
     public int[] singleNumbers(int[] nums) {
-        int a = 0;
-        for(int i : nums)
-          a ^= i;
-        int b = 1;
-        while((b & a) == 0)
-         b <<= 1;
-        int[] ans = new int[2];
-        for(int i : nums)
-          if((b&i)==0)
-          ans[0] ^= i;
-          else
-          ans[1] ^= i;
-          return ans;
+        int sum = 0;
+        for(int num:nums){
+            sum ^=num;
+        }
+
+        int flag = sum&(-sum);
+        int res1 = 0;
+        for(int val:nums){
+            if((flag&val)!=0){
+                res1 ^=val;
+            }
+        }
+
+        return new int[]{res1,res1^sum};
     }
 }
